@@ -51,6 +51,20 @@ module Enumerable
     end
   end
 
+  def my_none?
+    i = 0 
+    while i < self.length
+      true_or_false = yield(self[i])
+      if true_or_false == false
+        return true
+        break
+      elsif true_or_false == true
+        return false
+      end
+      i += 1
+    end
+  end
+
 end
 
 # You will first have to define my_each
