@@ -82,6 +82,18 @@ module Enumerable
     end
   end
 
+  def my_map
+    i = 0
+    new_array = []
+    if block_given?
+      while i < self.length
+        new_array[i] = yield(self[i])
+        i += 1
+      end
+      new_array
+    end
+  end
+
 end
 
 # You will first have to define my_each
