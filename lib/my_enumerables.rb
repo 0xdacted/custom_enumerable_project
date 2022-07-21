@@ -8,9 +8,19 @@ module Enumerable
     end
     self
   end
+# Returns a new array containing all elements of ary for which the given block returns a true value.
 
   def my_select
-
+    new_array = []
+    i = 0
+    while i < self.length
+    true_or_false = yield(self[i])
+    if true_or_false == true 
+      new_array << self[i]
+    end
+    i += 1
+    end
+    new_array
   end
 end
 
