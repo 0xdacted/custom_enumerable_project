@@ -22,6 +22,20 @@ module Enumerable
     end
     new_array
   end
+
+  def my_all?
+  i = 0
+  while i < self.length
+    true_or_false = yield(self[i])
+    if true_or_false == false
+      return false
+      break
+    elsif i == self.length - 1
+      return true
+    end
+    i += 1
+    end
+  end
 end
 
 # You will first have to define my_each
